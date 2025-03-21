@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <button onclick="toggleDarkMode()">Enable Dark Mode</button>
+    </div>
+    <div class="container">
+        <h1 class="fade-in">Currency Converter</h1>
+        <div class="form-group slide-in">
+            <label for="from_currency">From Currency:</label>
+            <select id="from_currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <!-- Add more currencies as needed -->
+            </select>
+        </div>
+        <div class="form-group slide-in">
+            <label for="to_currency">To Currency:</label>
+            <select id="to_currency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <!-- Add more currencies as needed -->
+            </select>
+        </div>
+        <div class="form-group slide-in">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount">
+        </div>
+        <button class="slide-in" onclick="convertCurrency()">Convert</button>
+    </div>
+    <div id="result-window" class="result-window">
+        <h2>Converted Result</h2>
+        <div id="result"></div>
+        <button onclick="closeResultWindow()">Close</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
